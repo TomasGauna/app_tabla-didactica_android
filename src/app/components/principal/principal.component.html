@@ -1,0 +1,82 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="principal.component.scss">
+</head>
+<body>
+    <div class="overlay" *ngIf="mostrarSpinner">
+      <div class="ring">Loading<span></span></div>
+    
+    </div>
+
+      <div *ngIf="mostrarDiv == 'ganado'" class="container">
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/animales/caballo.png" (click)="speakText('caballo')"></div>
+          <div class="box"><img src="assets/imagenes/animales/cerdo.png" (click)="speakText('cerdo')"></div>
+          <div class="box"><img src="assets/imagenes/animales/feliz.png" (click)="speakText('gato')"></div>
+        </div>
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/animales/gallina.png" (click)="speakText('gallina')"></div>
+          <div class="box"><img src="assets/imagenes/animales/perro.png" (click)="speakText('perro')"></div>
+          <div class="box"><img src="assets/imagenes/animales/tortuga.png" (click)="speakText('tortuga')"></div>
+        </div>
+      </div>
+    
+    <div class="container" *ngIf="mostrarDiv == 'numeros'">
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/numeros/cero.png" (click)="speakText('cero')"></div>
+          <div class="box"><img src="assets/imagenes/numeros/dos.png" (click)="speakText('dos')"></div>
+          <div class="box"><img src="assets/imagenes/numeros/cuatro.png" (click)="speakText('cuatro')"></div>
+        </div>
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/numeros/uno.png" (click)="speakText('uno')"></div>
+          <div class="box"><img src="assets/imagenes/numeros/tres.png" (click)="speakText('tres')"></div>
+          <div class="box"><img src="assets/imagenes/numeros/cinco.png" (click)="speakText('cinco')"></div>
+        </div>
+      </div>
+    
+    <div class="container" *ngIf="mostrarDiv == 'colores'">
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/colores/azul.png" (click)="speakText('azul')"></div>
+          <div class="box"><img src="assets/imagenes/colores/amarillo.png" (click)="speakText('amarillo')"></div>
+          <div class="box"><img src="assets/imagenes/colores/rojo.png" (click)="speakText('rojo')"></div>
+        </div>
+        <div class="otro-container">
+          <div class="box"><img src="assets/imagenes/colores/verde.png" (click)="speakText('verde')"></div>
+          <div class="box"><img src="assets/imagenes/colores/celeste.png" (click)="speakText('celeste')"></div>
+          <div class="box"><img src="assets/imagenes/colores/violeta.png" (click)="speakText('violeta')"></div>
+        </div>
+      </div>
+
+    <div id="container-floating" (click)="cerrarSesion()">
+      <div style="bottom: 91%; right: 12%;">
+        <img src="assets/imagenes/cerrar-sesion.png">
+      </div>
+    </div> 
+
+    <div id="menu">
+      <input type="checkbox" id="menu-toggle"/>
+      <ul>
+        <li>
+          <img src="assets/imagenes/portugal.png" (click)="cambiarIdioma('pt')">
+        </li><li>
+          <img src="assets/imagenes/reino-unido.png" (click)="cambiarIdioma('en-US')">
+        </li><li>
+          <img src="assets/imagenes/argentina.png" (click)="cambiarIdioma('es')">
+        </li>
+      </ul>
+    </div>
+
+    <div id="menu" style="top: 88%;">
+      <input type="checkbox" id="menu-toggle"/>
+      <ul>
+        <li>
+          <img src="assets/imagenes/circulo-de-color.png" (click)="cambiarTema('colores')">
+        </li><li>
+          <img src="assets/imagenes/ganado.png" (click)="cambiarTema('ganado')">
+        </li><li>
+          <img src="assets/imagenes/bloques-de-numeros.png" (click)="cambiarTema('numeros')">
+        </li>
+      </ul>
+    </div>
+</body>

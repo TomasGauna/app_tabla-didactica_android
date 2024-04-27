@@ -1,0 +1,65 @@
+<body>
+  <form autocomplete='off' class='form'>
+    <div class="contenedor">
+      <img src="assets/icon/icon-sin-fondo.png" class="imagen">
+    </div>
+
+    <div class="overlay" *ngIf="mostrarSpinner">
+      <div class="ring">Loading<span></span></div>
+    </div>
+
+    <div *ngIf="!formValido" class="error-message">
+      <p>{{mensajeError}}</p>
+    </div>
+    
+    <div class='control block-cube block-input'>
+      <input type='text' placeholder='Correo' name="email" [(ngModel)]="email" (click)="reiniciarCampos()">
+      <div class='bg-top'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg-right'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg'>
+        <div class='bg-inner'></div>
+      </div>
+    </div>
+    <div class='control block-cube block-input'>
+      <input type='password' placeholder='Contraseña' name="password" [(ngModel)]="clave" (click)="reiniciarCampos()">
+      <div class='bg-top'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg-right'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg'>
+        <div class='bg-inner'></div>
+      </div>
+    </div>
+    <select [(ngModel)]="usuarioElegido" (change)="cambiarSeleccion()" name="selectUsuario" (click)="reiniciarCampos()">
+      <option value="ninguno">Seleccionar usuario</option>
+      <option value="admin">Admin</option>
+      <option value="invitado">Invitado</option>
+      <option value="usuario">Usuario</option>
+      <option value="anonimo">Anonimo</option>
+      <option value="tester">Tester</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <button class='btn block-cube block-cube-hover' type='button' (click)="ingresar()">
+      <div class='bg-top'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg-right'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='text'>
+        Ingresar
+      </div>
+    </button>
+  </form>
+</body>
